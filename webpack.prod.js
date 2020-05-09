@@ -26,7 +26,7 @@ module.exports = {
                 loader: 'babel-loader',
 
                 options: {
-                    presets: ['env']
+                    presets: ['env', 'babel-preset-react']
                 }
             },
             {
