@@ -1,0 +1,70 @@
+/* can do:  structure file scss nested like */
+@import "colors";
+@import "functions";
+
+
+
+
+// posible improvement: use maps or list
+$section-side-padding-large: 105px;
+$outer-width-lg: 1920;
+$inner-width-lg: $outer-width-lg - 2 * ($section-side-padding-large/1px);
+
+$section-side-padding-desktop_lg: 80px;
+$outer-width-desktop_lg: 1280;
+$inner-width-desktop_lg: $outer-width-desktop_lg - 2 * ($section-side-padding-desktop_lg/1px);
+
+$section-side-padding-tb: 40px;
+$outer-width-tb: 414;
+$inner-width-tb: $outer-width-tb - 2 * ($section-side-padding-tb/1px);
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  // scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  // background-color: whitesmoke;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover { color: $yellow; }
+}
+.blurred {
+  filter: blur(4px);
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.full-section-width {
+  margin-left: -$section-side-padding-large;
+  margin-right: -$section-side-padding-large;
+}
+
+
+/* preload hover images */
+// body:hover:after, .logo:after {
+//   display: block;
+//   content: "";
+//   width:1px;
+//   height: 1px;
+//   position: absolute;
+//   bottom: 0;
+//   z-index: -1;
+//   visibility: hidden;
+//   background-image: url(../images/Go-Button_Hover.svg);
+//  }

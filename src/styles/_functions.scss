@@ -1,0 +1,35 @@
+//e.g. font-size-pixel to font-size-viewport-width
+@function pxToVw($target-px, $at-viewport-width) {
+  // font-pixel/(vw/100)
+  @return #{($target-px/($at-viewport-width/100)) + 'vw'};
+}
+
+@function pxToPercent($target-px, $at-viewport-width) {
+  // font-pixel/(vw/100)
+  @return #{(($target-px)/(($at-viewport-width)/100)) + '%'};
+}
+
+
+//font-size-pixel to letter-spacing-em
+@function pxToEm($font-size-px, $letter-spacing-px) {
+  //(1/font-size-px)*letter-spacing-px
+  @return #{(1/$font-size-px)*$letter-spacing-px + 'em'};
+}
+
+// so far only for bp-1920
+@function colToPx($cols, $bp:"large", $fluid:false) {
+
+  $col-size: 128.750;
+  $gap-size: 15;
+
+  @if $bp == "desktop" {
+    $col-size: 79.578;
+  }@else if $bp == "desktop_lg" {
+    $col-size: 79.578;
+  } @else if $bp == "tablet" {
+    $col-size: 76;
+    $gap-size: 10;
+  }
+  
+  @return $cols * $col-size + $cols*$gap-size;
+}

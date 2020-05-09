@@ -1,0 +1,218 @@
+@import "colors";
+/* Add animation (Chrome, Safari, Opera) */
+@-webkit-keyframes fadeMove {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+/* Add animation (Standard syntax) */
+@keyframes fadeMove {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+.mobile-break {
+  display: none;
+}
+
+
+/* The modal's background */
+.modal {
+  display: none;
+  /* position: fixed; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* height: 100%; */
+  height: 100vh;
+  /* overflow: auto; */
+  
+  /* padding: 4.7% 8.5%; */
+
+
+     
+}
+
+
+.modal:not(.modal--start) {
+  background-color: black;
+}
+
+/* Display the modal when targeted */
+.modal:target, 
+.modal--start,
+.modal--opened {
+  display: table;
+  position: absolute;
+  z-index: 999999;
+}
+
+
+
+.modal.modal--white {
+  background-color: white;
+}
+
+.modal--white .modal-text,
+.modal--white .modal-header h2, 
+.modal--white .modal-header .closebtn,
+.modal--white footer a {
+  color: black;
+}
+
+/* The modal's content */
+.modal-content {
+  position: relative;
+  padding: 0;
+  outline: 0;
+  text-align: left;
+  width: 100%;
+  animation-name: fadeMove;
+  animation-duration: 0.5s;
+  color: white;
+  height: 100%;
+  overflow: auto;
+  /* padding: 4.7% 8.5%; equals 90px 164px @ 1920 */
+  // padding: 90px 8.5%; /* equals 90px 164px @ 1920 */
+  padding: 40px 4.5%;
+}
+
+
+/* The button used to close the modal */
+.modal-header .closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: $yellow;
+  }
+}
+/* 
+.closebtn:hover,
+.closebtn:focus {
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+/* XXX.container {
+  padding: 2px 16px;
+} */
+
+.modal-header {
+  /* background-color: #5cb85c; */
+  font-size: 25px;
+  color: white;
+}
+
+.modal-header h2, .modal-header .closebtn {
+  font-size: 90px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1540px) { 
+  .modal-header h2, 
+  .modal-header .closebtn  {
+    font-size: 5.85vw; /* equals fontsize 90px at 1540px viewport width */
+  }
+}
+
+@media screen and (max-width: 860px) {  
+  .mobile-break {
+    display: inline;
+  }
+
+  .modal-content { 
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .modal-header h2, .modal-header .closebtn  {
+    font-size: 8vw;
+  }
+}
+
+/* @media screen and (max-width: 460px) { 
+  .modal-header h2, 
+  .modal-header .closebtn  {
+    margin-top: 40px;
+  }
+} */
+
+
+.modal-text {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.4px;
+}
+
+.modal-text a {
+  color: inherit;
+}
+
+.modal-header h2 {
+  margin-bottom: 85px;
+}
+
+.modal-text h3 {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+.modal-footer {
+  text-align: center;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1540px) {
+  .modal-text h3 { 
+    font-size: 2.6vw;
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+  .modal-text h3 { 
+    font-size: 26.5px
+  }
+}
+
+
+@media screen and (max-width: 460px) { 
+  .modal-text {
+    font-size: 16px;
+    line-height: 25px;
+    word-break: break-word;
+  }
+
+  .modal-text h3 { 
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+@keyframes flashYellow {
+  20%, 100% {
+    // opacity: 0;
+    color: black;
+    // transform: translate(200px, 0);
+  }
+  0% {
+    // opacity: 0;
+    color: black;
+
+  }
+  15% {
+    // opacity: 1;
+    color: $yellow;
+  }
+}
