@@ -21,8 +21,11 @@
     },
     "homepage": "",
     "dependencies": {
+        "@babel/preset-react": "^7.9.4",
         "normalize.css": "^8.0.0",
         "objectFitPolyfill": "^2.3.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
         "smooth-scroll": "^16.1.2",
         "vanilla-lazyload": "^15.1.1"
     },
@@ -33,6 +36,7 @@
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.4",
         "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
         "cash-dom": "^6.0.2",
         "clean-webpack-plugin": "^0.1.19",
         "css-loader": "^3.4.2",
